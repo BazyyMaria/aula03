@@ -1,8 +1,10 @@
 import {useEffect, useState} from "react";
+import loading from '../assets/loading.svg';
 import styles from "./Home.module.css";
 
 export default function Home() {
     const [produtos, setProdutos] = useState([]);
+    const [loading, setLoading] = useState(true);
 
 
 useEffect(() => {
@@ -13,11 +15,17 @@ useEffect(() => {
             setProdutos(dados);
        } catch (erro) {
            console.error("Erro ao buscar produtos:", erro);
+         } finally {
+            setLoading(false);
          }
       };
 
     receberListaProdutos();
 }, []); 
+
+if (loading) {
+    return <loading/>;
+}
 
 return (
     <>
