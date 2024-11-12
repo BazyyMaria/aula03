@@ -21,18 +21,17 @@ useEffect(() => {
 
 return (
     <>
-
-       <h1>Lista de Produtos</h1>
-       <ul>
-           {produtos.map((produto) => (
-               <li key={produto.id}>
-                   <h2>{produto.title}</h2>
-                   <p>{produto.description}</p>
-                   <p>Preço: R${produto.price}</p>
-                   <img src={produto.image} alt={produto.title} width={100} />
-               </li>
+        <h1 className={styles.titulo}>Lista de Produtos</h1>
+        <ul className={styles.listaProdutos}>
+            {produtos.map((produto) => (
+                <li key={produto.id} className={styles.produto}>
+                    <img src={produto.image} alt={produto.title} className={styles.imagemProduto} />
+                    <h2 className={styles.tituloProduto}>{produto.title}</h2>
+                    <p className={styles.descricaoProduto}>{produto.description}</p>
+                    <p className={styles.precoProduto}>Preço: R${produto.price}</p>
+                </li>
             ))}
-       </ul>
+        </ul>
     </>
   );
 }

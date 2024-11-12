@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
@@ -10,5 +11,5 @@ createRoot(document.getElementById('root')).render(
             <Route path="/" element={<Home/>}/>
        </Routes>
     </BrowserRouter>
-  </StrictMode>,
-)
+  </StrictMode>
+);
